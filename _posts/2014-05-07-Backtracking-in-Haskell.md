@@ -35,14 +35,14 @@ We first have a predicate `layrow` that, given a multiset of bricks, and
 a desired length for the row, create a possible ordering of bricks to make
 up a row.
 
-~~~ prolog
+{% highlight prolog %}
 layrow(Bricks, 0, Bricks, []).
 
 layrow(Bricks, RowLen, Left, [Brick|MoreBricksForRow]) :-
   getone(Brick, Bricks, Left0),
   RemLen is RowLen - Brick, RemLen >= 0,
   layrow(Left0, RemLen, Left, MoreBricksForRow).
-~~~
+{% endhighlight %}
 
 `layrow` works by selecting a brick, making sure we haven't gone over the
 length of our desired row, then attempting to make a row with of length
@@ -51,14 +51,14 @@ length of our desired row, then attempting to make a row with of length
 Now we take `layrow` and use it to implement `laybricks`, which will create
 multiple rows from the bricks provided.
 
-~~~ prolog
+{% highlight prolog %}
 laybricks(_,0,_,[]).
 
 laybricks(Bricks, Nrows, RowLen, [Row|Rows]) :-
   layrow(Bricks, RowLen, BricksLeft, Row),
   RowsLeft is Nrows - 1,
   laybricks(BricksLeft, RowsLeft, RowLen, Rows).
-~~~
+{% endhighlight %}
 
 Note that the implementation of laybricks is structurally similar to that
 of `layrow`, but now we must provide the desired row length as well as the
