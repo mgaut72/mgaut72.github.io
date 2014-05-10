@@ -57,15 +57,16 @@ blockquote {
   font-style:italic;
 }
 
-code, pre {
+/*code, pre {
   font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
   color:#333;
   font-size:12px;
 }
+*/
 
 pre {
   padding:8px 15px;
-  background: #f8f8f8;  
+  background: #f8f8ff;  
   border-radius:5px;
   border:1px solid #e5e5e5;
   overflow-x: auto;
