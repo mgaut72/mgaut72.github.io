@@ -13,6 +13,14 @@ Here is a simple example from wikipedia
 <img src="http://upload.wikimedia.org/wikipedia/commons/2/2b/Markovkate_01.svg"
      width="250px" />
 
+This markov chain indicates that if we are on the $E$ node, there is a $30%$
+chance we stay on the $E$ node, and a $70%$ chance we transition to the $A$
+node. Similiarly, if we are on the $A$ node, there is a $60%$ chance of staying
+on the $A$ node, and a $40%$ chance we transition to the $E$ node.
+
+Markov chains really aren't all that complicated, but have some fun
+applications.
+
 
 Some mathjax
 
