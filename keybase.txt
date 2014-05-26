@@ -1,0 +1,71 @@
+==================================================================
+https://keybase.io/mgaut72
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://mgaut72.github.io
+  * I am mgaut72 (https://keybase.io/mgaut72) on keybase.
+  * I have a public key with fingerprint 7706 D4A2 81C7 FE31 BE36  35E7 F6D2 6654 DED8 AB8B
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "7706d4a281c7fe31be3635e7f6d26654ded8ab8b",
+            "host": "keybase.io",
+            "key_id": "f6d26654ded8ab8b",
+            "uid": "14178097a054fb959c1324509c208000",
+            "username": "mgaut72"
+        },
+        "service": {
+            "hostname": "mgaut72.github.io",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1400131321,
+    "expire_in": 157680000,
+    "prev": "ce2059a54877182e2435a8d176da97fbd2dbca9ddfdb927caca68ef2c783e179",
+    "seqno": 3,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v0.1.14
+Comment: https://keybase.io/crypto
+
+yMMCAnicbZF9TBt1HMavg41ZsjeRObUb23WtKRK8u7b30skYGxthss2Nhhc3qffy
+u3JAe6W9MlhlgSiLIYPMDREHZqgJUnlR4oSAsg3K8KVLmX8gBBIXN8VoqzAWYIQF
+dkX9w8S/Lvd8P9/neX75Dm2IgJSKueKMftWOO40K/415N5QpHV30wIzIlcEmD1wI
+Vj+8YLcCp8Mp2CXYBBMEgnMGGiNRluCBHmWAHtcbAcHjHIbjRgMHOJJmSAZOgPNF
+V3hDtmFoF0gURFmTfywCJ6v/w7tXB6gBJUiEImjEaOAZykixqB4zGBGKxRASQZAw
+6AJOO20DMm2z0m6JwODyBFgWSwRWFj2ryf8FEq2ClO9m/i7hcIqSyIpF8jhfkhwu
+U3hdKnOE+dOAsfzjZGEEOyc/Xt4oAU6XINphEyqTrCSErVEDgqB6uRyaAINSh+AE
+FiFMGAk83BMJ54AS2ZIFGGKkaKOBJAiUxABm0BtpkkMJnKMpgmc4jGNYmuI4nmMo
+jGBplsZJwGMsQeoBSlByvgsU20XYpJdr0lbZ0iVY7bTkdgK4fHDgVCSkUELr1q4J
+nw9SPrH536MOiJtWTpw488xlv386NWJlbPzNjrmvl0O90bfiJ9uwueyNLXXDf2lf
+PzKj0fHTCmVrbm7kUldCxbbkdLYYZe6/8MnLD3o/yEgZhdsy30/27GuaKfjcr7ty
+fVrXXjT72lhRA/+WKat1cWZoRO1Vi3Fj6kuqswfEjvKbISG2ZWLbnviF37W1z44O
+an4c3KOBFzrqArpXgucb6meTvj1WQDSe+6ap8IvJhp4Vn/vXoU7db9Pm0VAu2Z2q
+OZkVsGV+9FIK9/Gl5rEHlc8Vro8av1aXEzlxOya98lrZ0u5x6arieNKuvdW2uWxF
+MGfpKe/KL7PDB/oCbP7TPRnVqT21/kdBtasgirifMrs7quf77lefPwlRD5uD3iNN
+2r53fbfvnI/7VKs6NGA+/lWVSkdcDyh23PK11M+/V7Xly7tmrzSVU5rW3t1gWKu6
+e+Zep3aqJhUyo4H9QSke33/Qm3h69J2H7b0jeRXRXclrPnQmxmzfekGZV1F/lB3p
+Xd7JV+al1TzqVxenRPy0s3LLhaH0fm6y7Q1GfepPaN+6Ih6fcTYSG80a7dnQRV/f
+5mN1WX/ccygqqhauXN5UW5N0U+yMTflh2DaPaNpfnAi4D5ZOW7ayG5BdqhtPRl81
+e97OzshJ+y5toSK9a3Hvz4fHYw5B1YeboG6w3Xeuufzi1Get65ejS5M8saFolz3u
+MbSJk5Y=
+=sEyx
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/mgaut72
+
+==================================================================
