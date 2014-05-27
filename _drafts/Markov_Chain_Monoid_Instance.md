@@ -1,46 +1,111 @@
 ---
 layout: blog_entry
-title: "A Markov Chain as a Monoid Instance"
+title: "A Markov Chain Monoid Instance hanging out in IRC"
 ---
 
-# Markov Chains
-Markov chains are neat little data structures.  Conceptually, a markov chain
+So you know where we are going, the goal of this project is to create an IRC
+bot that responds to the channel with statements seeds from that channel.  To
+do this, I will create a Markov chain data structure, which can modify itself
+to update with the current conversations of the room.
+
+## Markov Chains
+Markov chains are neat little data structures.  Conceptually, a Markov chain
 is just a weighted, directed graph.  Each node represents some state, and each
 edge represents the probability of transitioning to that next state.
 
-Here is a simple example from wikipedia
+Here is a simple example from Wikipedia
 
 <img src="http://upload.wikimedia.org/wikipedia/commons/2/2b/Markovkate_01.svg"
      width="250px" />
 
-This markov chain indicates that if we are on the $E$ node, there is a $30%$
-chance we stay on the $E$ node, and a $70%$ chance we transition to the $A$
-node. Similiarly, if we are on the $A$ node, there is a $60%$ chance of staying
-on the $A$ node, and a $40%$ chance we transition to the $E$ node.
+This Markov chain indicates that if we are on the $E$ node, there is a $30\%$
+chance we stay on the $E$ node, and a $70\%$ chance we transition to the $A$
+node. Similarly, if we are on the $A$ node, there is a $60\%$ chance of staying
+on the $A$ node, and a $40\%$ chance we transition to the $E$ node.
 
 Markov chains really aren't all that complicated, but have some fun
 applications.
 
+## Markov-Generated Text
 
-Some mathjax
+The most fun application of Markov chains is by far seeding them with some sort
+of text, then traversing them to create new sentences or lists of words.
+This process has been used to make [fake conference submissions](1),
+exposing them as academically dishonest.  Often times the generated text will
+have the same structure as an English sentence, but when you actually read the
+sentence, it is completely incoherent.
 
-$$
-\begin{array}{c c c c}
- a & b & c & d & \cdots & z \\\\
- \downarrow & \downarrow & \downarrow & \downarrow & \cdots & \downarrow \\\\
- 0 & 1 & 2 & 3 & \cdots & 25 \\\\
- \end{array}
-$$
+## Markov chains as Monoids
+
+It is often the case that when one is creating a Markov chain, you seed it once
+with various input text (or some list of objects really), and then traverse it
+many times to generate a collection of Markov-generated lists.
+
+While this works for generating a paper or something, I want my IRC bot to
+update with conversations in the room as the progress.  To do this I need some
+way of "adding" two Markov chains.  This means I need a monoid!
+
+Just a reminder: a monoid is a "type with an associative binary operation that
+has an identity" ([hackage](2)). The binary operation part means that we can
+combine two instances of our type and the result will be a third instance of
+our type, we call this operation `mappend`.
+There are a few other [monoid laws](3) that I won't go into, since the notion
+of `mappend` is what is important for my Markov chain.
+
+The idea will be that for every chunk of text I read out of an IRC channel,
+I can create a new Markov chain, then use `mappend` to combine this Markov
+chain with the main one, yielding an updated structure.
+
+## Implementation
+
+One of the most common ways to implement a Markov chain is as a graph. This
+tends to work quite well most of the time, but we introduce some complications
+by making the structure a monoid.  To account for these complications, I came
+up with a few potential implementations.
+
+### Just the Graph
+
+Like I said, the graph implementation is sort of the most obvious, but perhaps
+not the best in this case.  Based on my brief research, fgl (the functional
+graph library) is really the way to go as far as Haskell graphs.
+fgl assigns each node an `Int` which serves as its identifier.  This makes
+working with the graph a little difficult, but apparently there are very good
+reasons why this needs to be done in a purely functional language.
+
+Traversing the graph in order
+to make Markov-generated lists involved a lot of overhead.
+First you need to
+get a collection of all the nodes your current node has.  The edge weight can
+either have the probability of that traversal, or the count for the number of
+times that sequence of words has occurred.  If its a count, `mappend`ing two
+Markov chains is easier, since we just add.  If its a probability, the edge
+weight probabilities all need to be re-calculated when we `mappend`,
+which complicates things a bit.
+
+Regardless, we then need to randomly generate a number, and someone correlate
+this to one of the possible nodes.  Relatively easy, though not completely
+trivial.
+
+### Map from Element to list of Elements
+
+In this flavor of a Markov chain implementation, each element is the key in
+a map, whose values are other elements.  When element $b$ is in the list
+indexed by element $b$, this means that the markov chain was generated by
+a list with $ab$; that is, $a$ is directly to the left of $b$.  We can
+represent multiple adjacencies simply by adding multiple elements to the list.
+So if the sequence $ab$ occurs twice in the seed list, we would have
+$a \mapsto \[b,...,b,...\]$.  Then to make a random traversal, we just select
+a random element from the list.  Furthermore, we can use Data.Sequence (which
+is tree-based) as our
+backing container for faster random element selection ($O(log(n))$ rather than
+$O(n)$). `mappend`ing two Markov chains is easy, we we just have to concatenate
+lists if we have a key collision.  We see the benefits of using a Data.Sequence
+in this step as well.
 
 
-Some syntax highlighting
-{% highlight haskell %}
--- file : CryptoTools.hs
 
-import Data.Char (toUpper)
 
-alphaIdxToChar :: Int -> Char
-alphaIdxToChar = toEnum . (+ 65)
-{% endhighlight %}
+[1]: http://www.theguardian.com/technology/shortcuts/2014/feb/26/how-computer-generated-fake-papers-flooding-academia
+[2]: http://hackage.haskell.org/package/base-4.6.0.1/docs/Data-Monoid.html
+[3]: http://en.wikibooks.org/wiki/Haskell/Monoids#Haskell_definition_and_laws
 
-`inline code`
