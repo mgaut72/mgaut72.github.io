@@ -1,6 +1,6 @@
 ---
 layout: blog_entry
-title: "A Markov Chain Monoid Instance hanging out in IRC"
+title: "A Markov Chain Monoid Instance (IRC Bot Part 1)"
 ---
 
 So you know where we are going, the goal of this project is to create an IRC
@@ -86,7 +86,7 @@ Regardless, we then need to randomly generate a number, and someone correlate
 this to one of the possible nodes.  Relatively easy, though not completely
 trivial.
 
-### Map from Element to list of Elements
+### Map from Element to List of Element
 
 In this flavor of a Markov chain implementation, each element is the key in
 a map, whose values are other elements.  When element $b$ is in the list
@@ -102,8 +102,42 @@ $O(n)$). `mappend`ing two Markov chains is easy, we we just have to concatenate
 lists if we have a key collision.  We see the benefits of using a Data.Sequence
 in this step as well.
 
+### Map from Element to Set of (Element, Frequency)
 
+This is very similar to the previous potential implementation.  Rather than
+allow duplicates, this implementation keeps the frequency of each element
+together with the element label. This will keep the number of values in the set
+of $(Element, Frequency)$ to a minimum.  While this is good, I don't quite know
+how I would get a random element from this set.  I suppose the set would
+actually have to be a list.  Then I can randomly generate a number between
+0 and 1.  Then, with that random number, linearly scan the list, comparing the
+number to the frequencies I see, and when my random number falls in into the
+range of one element, I select that one.
 
+To make this idea more clear, the implementation would be something like this:
+{% highlight haskell %}
+getElem :: [(a, Float)] -> Float -> Float -> a
+getElem ((elem, freq):freqs) randFloat currFloat
+  | currFloat + freq > randFloat = elem
+  | otherwise = getElem freqs randFloat (currFloat + freq)
+{% endhighlight %}
+
+Then to actually get an element, we have to seed `currFloat` with 0, and feed
+this function a random float and the container of $(Element, Frequency)$.
+
+### And the Winner is...
+
+I ended up implementing my Markov Chain using the "Map from Element to List of
+Element" option.  There are just so many different words I anticipate my IRC
+bot coming across.  Assuming that most words are not duplicated, my selected
+implementation has runs in $O(log(n))$ to select a given word in traversing the
+Markov chain, compared to the other map-based implementation, which runs in
+$O(n)$.
+
+While I haven't done too much research into whether or not most words are not
+duplicated in my lists, I have looked at "Alice in Wonderland" (found free on
+Project Gutenberg), and throughout the entire book, my intuition was generally
+true, except for the really common words.
 
 [1]: http://www.theguardian.com/technology/shortcuts/2014/feb/26/how-computer-generated-fake-papers-flooding-academia
 [2]: http://hackage.haskell.org/package/base-4.6.0.1/docs/Data-Monoid.html
