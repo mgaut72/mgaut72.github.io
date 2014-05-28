@@ -8,6 +8,8 @@ bot that responds to the channel with statements seeds from that channel.  To
 do this, I will create a Markov chain data structure, which can modify itself
 to update with the current conversations of the room.
 
+You can find the code in [this repo](4).
+
 ## Markov Chains
 Markov chains are neat little data structures.  Conceptually, a Markov chain
 is just a weighted, directed graph.  Each node represents some state, and each
@@ -139,7 +141,10 @@ duplicated in my lists, I have looked at "Alice in Wonderland" (found free on
 Project Gutenberg), and throughout the entire book, my intuition was generally
 true, except for the really common words.
 
+You can find the code in [this repo](4).
+
 [1]: http://www.theguardian.com/technology/shortcuts/2014/feb/26/how-computer-generated-fake-papers-flooding-academia
 [2]: http://hackage.haskell.org/package/base-4.6.0.1/docs/Data-Monoid.html
 [3]: http://en.wikibooks.org/wiki/Haskell/Monoids#Haskell_definition_and_laws
+[4]: https://github.com/mgaut72/MarkovChain
 
