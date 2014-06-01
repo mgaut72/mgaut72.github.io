@@ -6,17 +6,25 @@ head_elements: |
   <script type="text/javascript" src="javascripts/cal-heatmap.min.js"></script>
   <link rel="stylesheet" href="stylesheets/cal-heatmap.css" />
 ---
-  <h3>Latest entries</h3>
+
+  <h3>About Me</h3>
+  <p>
+  I'm a student at the University of Arizona, majoring in math
+  and computer science, minoring in spanish and physics.
+  </p>
+
+
+  <h3>Latest Entries</h3>
   <ul class="entries">
-    {% for post in site.posts %}
-   
+    {% for post in site.posts limit:3 %}
     <li>
         <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
         {{ post.date | date: "%B %d, %Y" }}
     </li>
-   
     {% endfor %}
   </ul>
+  <h2><a href=/blog>All Posts</a></h2>
+
   <h3>Github Activity</h3>
   <div id="cal-heatmap"></div>
   <script type="text/javascript">
