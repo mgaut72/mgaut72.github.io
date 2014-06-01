@@ -191,6 +191,12 @@ footer {
 }
 
 @media screen and (max-height: 600px){
+    header img.gravatar {
+        display:none;
+    }
+}
+
+@media screen and (max-height: 455px){
     footer {
         display:none;
     }
