@@ -2,8 +2,6 @@
 layout: default
 head_elements: |
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.0/moment.min.js"></script>
-  <script src="//crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
   <script type="text/javascript" src="//d3js.org/d3.v3.min.js"></script>
   <script type="text/javascript" src="javascripts/cal-heatmap.min.js"></script>
   <link rel="stylesheet" href="stylesheets/cal-heatmap.css" />
@@ -31,12 +29,9 @@ head_elements: |
 
       var stats = {};
       for (var i = 0; i < data.length; i++) {
-        var quantity = eval(data[i][1]);
+        var quantity = data[i][1];
         if (quantity > 0){
-          var year = eval(data[i][0].slice(0,4));
-          var month = eval(data[i][0].slice(5,7))-1;
-          var day = eval(data[i][0].slice(8,10));
-          var dat = new Date(year, month, day);
+          var dat = new Date(data[i][0]);
           stats[(dat.getTime()/1000).toString()] = quantity;
           max = Math.max(max, quantity);
         }
