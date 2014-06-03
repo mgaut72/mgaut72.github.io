@@ -1,7 +1,27 @@
+---
+layout: blog_entry
+title: "Service Oriented Architecture"
+---
+
 # Service Orianted Architecture (SOA)
 
-Service oriented architecture is the organization of a system into disjoint sections of code that communicate over some networking protocol. There are lots of cool codebases out there built with a service oriented architecture.
+Service oriented architecture is the organization of a system into disjoint
+sections of code that communicate over some networking protocol.
 
-For my software engineering course, we built a cryptocurrency dashboard. Our system has a service oriented architecture, with the web API communicating with services that manage cryptocurrency wallets and exchanges.
+For my software engineering course, we built a cryptocurrency dashboard.
+Our system has a service oriented architecture, with the web API communicating
+with services that manage cryptocurrency wallets and exchanges.
 
-Check out of talk [here](https://docs.google.com/file/d/0B838mL_xPkS0ZWhUXzM3TVdGTDg/edit?usp=docslist_api)
+At the time of this talk, I thought SOA was the hip new thing that all the cool
+kids (such as twitter) were using. Turns out SOA has been around a while, but
+I think thats because its generally a pretty good idea.
+
+Here are [the slides](slides) if you would like to follow along.
+
+Without further ado, the talk:
+
+
+<iframe width="560" height="315" src="//www.youtube.com/embed/tHkxsu_w9ho"
+frameborder="0" allowfullscreen></iframe>
+
+[slides]: https://docs.google.com/presentation/d/1dRzgdvFk4D_iOuHRqMcOlz0QWOFavbHp_-M2cQ9mNYM/pub?start=false&loop=false&delayms=3000#slide=id.g27269182c_1150
