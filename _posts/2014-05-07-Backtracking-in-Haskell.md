@@ -13,7 +13,8 @@ in Prolog was extremely powerful.  On my (long) walk to class today, I realized
 that I could probably simulate backtracking in Haskell, using lists.
 After some quick googling, I confirmed that the list monad (or non-determinism
 monad, if you will) can be used for exactly that.  I came across
-[Useful Idioms that will Blow Your Mind][1] that had some simple(ish) examples
+[Useful Idioms that will Blow Your Mind](http://www.haskell.org/haskellwiki/Blow_your_mind)
+that had some simple(ish) examples
 of using the list monad for a backtracking style solution, much like how
 one would solve a problem in idiomatic Prolog.
 
@@ -26,7 +27,8 @@ placed side by side, all have the same length.  This will constitute a row.
 Then we create multiple rows in order to create some sort of wall.
 
 This problem is taken from the University of Arizona's CSc 372 Spring 2014,
-as taught by Mr. William Mitchell.  Specifically, see [his Prolog slides][2]
+as taught by Mr. William Mitchell.  Specifically, see
+[his Prolog slides](http://www.cs.arizona.edu/classes/cs372/spring14/prolog.pdf)
 page 184.
 
 ### Prolog Solution
@@ -90,7 +92,3 @@ I think prolog is definitely work learning, but there is a reason it never
 really caught on.  Personally, if I wanted a backtracking solution to
 a problem, I would use lists in Haskell.  I would have all the recursive
 backtracking power, with a more friendly language with useful libraries.
-
-[1]: http://www.haskell.org/haskellwiki/Blow_your_mind
-[2]: http://www.cs.arizona.edu/classes/cs372/spring14/prolog.pdf
-

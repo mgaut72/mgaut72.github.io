@@ -8,7 +8,7 @@ bot that responds to the channel with statements seeds from that channel.  To
 do this, I will create a Markov chain data structure, which can modify itself
 to update with the current conversations of the room.
 
-You can find the code in [this repo](4).
+You can find the code in [this repo](https://github.com/mgaut72/MarkovChain).
 
 ## Markov Chains
 Markov chains are neat little data structures.  Conceptually, a Markov chain
@@ -32,7 +32,8 @@ applications.
 
 The most fun application of Markov chains is by far seeding them with some sort
 of text, then traversing them to create new sentences or lists of words.
-This process has been used to make [fake conference submissions](1),
+This process has been used to make
+[fake conference submissions](http://www.theguardian.com/technology/shortcuts/2014/feb/26/how-computer-generated-fake-papers-flooding-academia),
 exposing them as academically dishonest.  Often times the generated text will
 have the same structure as an English sentence, but when you actually read the
 sentence, it is completely incoherent.
@@ -48,10 +49,12 @@ update with conversations in the room as the progress.  To do this I need some
 way of "adding" two Markov chains.  This means I need a monoid!
 
 Just a reminder: a monoid is a "type with an associative binary operation that
-has an identity" ([hackage](2)). The binary operation part means that we can
+has an identity" ([hackage](http://hackage.haskell.org/package/base-4.6.0.1/docs/Data-Monoid.html)).
+The binary operation part means that we can
 combine two instances of our type and the result will be a third instance of
 our type, we call this operation `mappend`.
-There are a few other [monoid laws](3) that I won't go into, since the notion
+There are a few other [monoid laws](http://en.wikibooks.org/wiki/Haskell/Monoids#Haskell_definition_and_laws)
+that I won't go into, since the notion
 of `mappend` is what is important for my Markov chain.
 
 The idea will be that for every chunk of text I read out of an IRC channel,
@@ -141,10 +144,4 @@ duplicated in my lists, I have looked at "Alice in Wonderland" (found free on
 Project Gutenberg), and throughout the entire book, my intuition was generally
 true, except for the really common words.
 
-You can find the code in [this repo](4).
-
-[1]: http://www.theguardian.com/technology/shortcuts/2014/feb/26/how-computer-generated-fake-papers-flooding-academia
-[2]: http://hackage.haskell.org/package/base-4.6.0.1/docs/Data-Monoid.html
-[3]: http://en.wikibooks.org/wiki/Haskell/Monoids#Haskell_definition_and_laws
-[4]: https://github.com/mgaut72/MarkovChain
-
+You can find the code in [this repo](https://github.com/mgaut72/MarkovChain).
