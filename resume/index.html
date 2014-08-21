@@ -4,10 +4,12 @@ body_class: resume
 head_elements: |
   <link href="/stylesheets/resume-print.css" rel="stylesheet" type="text/css" media="print" />
 ---
-<h1 class="print-hidden">Resume</h1>
- <p class="print-hidden"><em>References available upon request. Email me at 
-    <a href="mailto:mgaut72@gmail.com">mgaut72@gmail.com</a>
- </em></p>
+
+<section class="print-visible" id="contact-info">
+   <a href="mailto:mgaut72@gmail.com">mgaut72@gmail.com</a><br/>
+   (520) 241 1414
+ </section>
+
 
  <section id="objective">
  <h2>Objective</h2>
@@ -20,6 +22,19 @@ head_elements: |
  <h2>Experience</h2>
 
  <ul>
+
+  <li>
+     <h3><a href="http://aws.amazon.com/cloudfront/">Amazon Web Services, CloudFront</a>
+       <small>May 2014&ndash;Aug 2014</small>
+     </h3>
+
+     <p>
+     Add a customer-facing feature to allow more fine-grained control of CloudFront behavior.
+     Facilitate better organization of a customer’s origin server.
+     Use of C caching and proxying libraries.
+     </p>
+   </li>
+
    <li>
      <h3><a href="https://github.com/frl-arizona-edu">U of Arizona Flight Research Lab</a>
        <small>Dec 2013&ndash;Present</small>
@@ -27,8 +42,8 @@ head_elements: |
 
      <p>Develop a target detection system for a UAV utilizing image processing
      and computer vision techniques. The scikit family of python libraries and OpenCV
-     are used for the computer vision implementation.  The ZeroMQ messaging library is
-     used for coordinating between stages of the processing pipeline.</p>
+     are used for the computer vision implementation.  Use of the ZeroMQ messaging library
+     for coordinating between stages of the processing pipeline.</p>
    </li>
 
    <li>
@@ -61,9 +76,9 @@ head_elements: |
 
      <p>Honors College and Dean's List
      <br>B.S. Computer Science and Math
-     <br>Minors in Physics and Spanish</p>
-     <p><strong>Cumulative GPA: 3.752/4.0</strong>. <em>Transcript 
-     available upon request.</em></p>
+     <br>Minors in Physics and Spanish
+     <br>GPA: 3.752/4.0
+     </p>
    </li>
 
  </ul>
@@ -97,101 +112,3 @@ head_elements: |
    </li>
  </ul>
  </section>
-
- <!--
- <section id="skills">
- <h2>Skills &amp; Expertise</h2>
-
- <ul>
-   <li>
-    <h3>C</h3>
-
-    <p>Very familiar with developing C programs. Implemented a compiler for a subset of C called <em>Clike</em>, targeting the MIPS32 architecture. Familiar with <em>gprof</em>, <em>gdb</em>, and <em>valgrind</em>.</p>
-   </li>
-
-   <li>
-     <h3>Java</h3>
-
-     <p>Implemented serveral data structures and associated algorithms (binary search trees, hash tables, graphs),
-     Tic-Tac-Toe and a tower defence game with Swing. Experience working with
-     Visual VM, a Java profiler, and JUnit, a unit
-     testing library.</p>
-   </li>
-
-   <li>
-     <h3>Python</h3>
-
-     <p>Preferred development environment. Experience working with web 
-     frameworks like Django and Pyramid, as well as developing standalone
-     packages including a <a
-     href="https://github.com/iPlantCollaborativeOpenSource/pycommands">client API
-     for a distributed filesystem manager</a>. Very comfortable writing idiomatic
-     Python.</p>
-   </li>
-
-   <li class="print-hidden">
-     <h3>Django</h3>
-
-     <p>Very familiar with the Python-based MVC web framework. Worked on a number of
-     applications of different sizes with the framework.</p>
-   </li>
-
-
-   <li>
-     <h3>Ruby on Rails</h3>
-
-     <p>Experience working with a large Ruby on Rails application. Comfortable 
-     creating schema migrations, writing tests (unit, functional, integration), 
-     and creating and modifying controller actions and views.</p>
-   </li>
-
-   <li>
-     <h3>Backbone.js</h3>
-
-     <p>Well accustomed to the Model-Controller JavaScript application framework.
-     Familiar with building event-driven frontend applications.</p>
-   </li>
-
-   <li class="print-hidden">
-     <h3>jQuery</h3>
-
-     <p>Extremely proficient in using jQuery for everything from asynchronous calls to
-     the server to complex DOM manipulation to interactive interfaces, including
-     experience with <a href="http://jqueryui.com/">jQuery UI.</a></p>
-   </li>
-
-   <li>
-     <h3>PostgreSQL &amp; MySQL</h3>
-
-     <p>Experience with designing and implementing schemas for relational databases.
-     Comfortability with Standard Query Language (SQL).</p>
-   </li>
-
-   <li>
-     <h3>Git</h3>
-
-     <p>Preferred source control tool. Familiar with its use for team-based rapid
-     development.</p>
-   </li>
-
-   <li>
-     <h3>Linux</h3>
-
-     <p>Familiarity with Linux server environments. Comfortability with command-line
-     utilities. Experience with CentOS and Ubuntu servers.</p>
-   </li>
-
-   <li class="print-hidden">
-     <h3>WordPress</h3>
-
-     <p>Plenty of experience building client sites with WordPress at their core. I have
-     developed custom themes and plugins.</p>
-   </li>
- </ul>
- </section>
-
- <section class="print-visible" id="contact-info">
- <a href="http://cjlarose.com">cjlarose.com</a><br />
- (520) 780-1900
- </section>
- -->
