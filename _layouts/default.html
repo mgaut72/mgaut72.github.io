@@ -13,6 +13,9 @@
   <![endif]-->
   {{ page.head_elements }}
 </head>
+
+{% assign active = page.url | downcase | split: '/' %}
+
 <body{% if page.body_class %} class="{{ page.body_class }}" {% endif %}>
     <div class="wrapper">
       <header>
@@ -20,10 +23,10 @@
         <h1><a href="/">Matt Gautreau</a></h1>
         <p class="print-hidden">Software Developer</p>
         <ul class="clearfix">
-            <li><a href="/">Home</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/resume">Resume</a></li>
-            <li><a href="https://github.com/mgaut72">Github</a></li>
+          <li><a href="/" {% if page.url == '/index.html'  %}class='active'{% endif %}>Home</a></li>
+          <li><a href="/blog" {% if active[1] == 'blog' %}class='active'{% endif %}>Blog</a></li>
+          <li><a href="/resume" {% if active[1] == 'resume' %}class='active'{% endif %}>Resume</a></li>
+          <li><a href="https://github.com/mgaut72">Github</a></li>
         </ul>
       </header>
       <section id="content">
