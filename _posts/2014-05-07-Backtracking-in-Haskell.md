@@ -88,7 +88,7 @@ recursive backtracking solutions to problems.  However, Haskell is such
 a powerful language that we can solve problems in a Prolog-ish manner using
 standard Haskell types, namely the non-determinism monad (good ol' lists).
 
-I think prolog is definitely work learning, but there is a reason it never
+I think prolog is definitely worth learning, but there is a reason it never
 really caught on.  Personally, if I wanted a backtracking solution to
 a problem, I would use lists in Haskell.  I would have all the recursive
 backtracking power, with a more friendly language with useful libraries.
