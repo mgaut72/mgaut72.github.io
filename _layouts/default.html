@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <title> {% if page.title %} {{ page.title }} | {% endif %} Matt Gautreau, Software Developer</title>
-  <link rel="stylesheet" href="/stylesheets/styles.css">
-  <link rel="stylesheet" href="/stylesheets/site.css">
-  <link rel="stylesheet" href="/stylesheets/pygment_trac.css">
-  <link rel="icon" type="image/ico" href="/favicon.ico"/>
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <link rel="stylesheet" href="/static/css/site.css">
+  <link rel="stylesheet" href="/static/css/pygment_trac.css">
+  <link rel="icon" type="image/ico" href="/static/img/favicon.ico"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
   <!--[if lt IE 9]>
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -22,12 +22,12 @@
       <header>
         <a href="/"><img class="print-hidden gravatar" src="http://www.gravatar.com/avatar/723e7476a6697a0b64201176f23041c9?s=460"/></a>
         <h1><a href="/">Matt Gautreau</a></h1>
+        <a href="mailto:mgaut72@gmail.com" class="print-hidden">mgaut72@gmail.com</a>
         <p class="print-hidden">Software Developer</p>
         <ul class="clearfix">
           <li><a href="/" {% if page.url == '/index.html'  %}class='active'{% endif %}>Home</a></li>
           <li><a href="/blog" {% if active[1] == 'blog' %}class='active'{% endif %}>Blog</a></li>
           <li><a href="/resume" {% if active[1] == 'resume' %}class='active'{% endif %}>Resume</a></li>
-          <li><a href="https://github.com/mgaut72">Github</a></li>
         </ul>
       </header>
       <section id="content">
@@ -38,7 +38,7 @@
         <p><small>To use my code, read my <a href="/license">license</a>.</small></p>
       </footer>
     </div>
-    <script src="/javascripts/scale.fix.js"></script>
+    <script src="/static/js/scale.fix.js"></script>
     <!-- Google Analytics -->
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
