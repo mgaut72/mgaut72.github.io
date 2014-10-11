@@ -125,7 +125,21 @@ header img.gravatar {
     border-radius:6px;
 }
 
-header ul {
+header img.icon {
+    width:57px;
+}
+
+header ul.icons {
+  list-style:none;
+  padding:0;
+  width:230px;
+}
+
+header ul.icons li {
+  float:left;
+}
+
+header ul.clearfix {
   list-style:none;
   
   padding:0;
@@ -144,24 +158,24 @@ header ul {
   width:230px;
 }
 
-header li {
+header ul.clearfix li {
   width:74px;
   float:left;
   border-right:1px solid #d2d2d2;
 }
 
-header ul li + li {
+header ul.clearfix li + li {
   width:74px;
   border-left:1px solid #fff;
   border-right:1px solid #d2d2d2;
 }
 
-header ul li + li + li {
+header ul.clearfix li + li + li {
   width:74px;
   border-right:none;
 }
 
-header ul a {
+header ul.clearfix a {
   line-height:1;
   font-size:14px;
   color:#222;
@@ -188,7 +202,7 @@ footer {
   width:230px;
   float:left;
   position:fixed;
-  bottom:50px;
+  bottom:35px;
 }
 
 @media screen and (max-height: 600px){
@@ -203,6 +217,7 @@ footer {
     }
 }
 
+/*
 @media print, screen and (max-width: 960px) {
   
   div.wrapper {
@@ -235,14 +250,40 @@ footer {
     display:inline;
   }
   
-  header ul {
+  header ul.clearfix {
+    position:absolute;
+    right:300px;
+    top:75px;
+  }
+
+  header ul.icons {
     position:absolute;
     right:55px;
     top:75px;
   }
 }
+*/
 
 @media print, screen and (max-width: 720px) {
+
+  div.wrapper {
+    width:auto;
+    margin:0;
+  }
+
+  header, #content, footer {
+    float:none;
+    position:static;
+    width:auto;
+  }
+
+  #content {
+    border:1px solid #e5e5e5;
+    border-width:1px 0;
+    padding:20px 0;
+    margin:0 0 20px;
+  }
+  
   body {
     word-wrap:break-word;
   }

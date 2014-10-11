@@ -22,19 +22,24 @@
       <header>
         <a href="/"><img class="print-hidden gravatar" src="http://www.gravatar.com/avatar/723e7476a6697a0b64201176f23041c9?s=460"/></a>
         <h1><a href="/">Matt Gautreau</a></h1>
-        <a href="mailto:mgaut72@gmail.com" class="print-hidden">mgaut72@gmail.com</a>
         <p class="print-hidden">Software Developer</p>
         <ul class="clearfix">
           <li><a href="/" {% if page.url == '/index.html'  %}class='active'{% endif %}>Home</a></li>
           <li><a href="/blog" {% if active[1] == 'blog' %}class='active'{% endif %}>Blog</a></li>
           <li><a href="/resume" {% if active[1] == 'resume' %}class='active'{% endif %}>Resume</a></li>
         </ul>
+        <ul class="icons">
+          <li><a href="https://github.com/mgaut72"><img class="print-hidden icon" src="/static/img/github.png"/></a>
+          <li><a href="http://www.linkedin.com/pub/matt-gautreau/9b/aa2/902"><img class="print-hidden icon" src="/static/img/linkedin.png"/></a>
+          <li><a href="https://twitter.com/mgaut72"><img class="print-hidden icon" src="/static/img/twitter.png"/></a>
+          <li><a href="mailto:mgaut72@gmail.com"><img class="print-hidden icon" src="/static/img/gmail.png"/></a>
+        </ul>
       </header>
       <section id="content">
         {{ content }}
       </section>
       <footer>
-        <p><small>Hosted on GitHub Pages<br>Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        <p><small>Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
         <p><small>To use my code, read my <a href="/license">license</a>.</small></p>
       </footer>
     </div>
